@@ -70,7 +70,7 @@ class FgameEnv:
         self.base_init_quat = torch.tensor(self.env_cfg["base_init_quat"], device=self.device)
         self.inv_base_init_quat = inv_quat(self.base_init_quat)
         self.robot = self.scene.add_entity(
-            gs.morphs.MJCF(file='/home/gerrysun/work/genesis/mjcf/fgame_skeleton_add_visual.xml'),
+            gs.morphs.MJCF(file='xml/fgame_skeleton_add_visual.xml'),
         )
 
         # build
