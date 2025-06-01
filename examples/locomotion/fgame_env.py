@@ -1,5 +1,6 @@
 import torch
 import math
+import os
 import genesis as gs
 from genesis.utils.geom import quat_to_xyz, transform_by_quat, inv_quat, transform_quat_by_quat
 
@@ -69,8 +70,10 @@ class FgameEnv:
         self.base_init_pos = torch.tensor(self.env_cfg["base_init_pos"], device=self.device)
         self.base_init_quat = torch.tensor(self.env_cfg["base_init_quat"], device=self.device)
         self.inv_base_init_quat = inv_quat(self.base_init_quat)
+        current_script_folder = os.path.split(os.path.abspath(__file__))[0]
+        xml_folder = f'{current_script_folder}/../../genesis/assets'
         self.robot = self.scene.add_entity(
-            gs.morphs.MJCF(file='xml/fgame_skeleton_add_visual.xml'),
+            gs.morphs.MJCF(file=f'{xml_folder}/xml/fgame_skeleton_add_visual.xml'),
         )
 
         # build
