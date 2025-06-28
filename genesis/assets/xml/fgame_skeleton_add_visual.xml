@@ -8,7 +8,7 @@
 	<default>
 		<motor ctrlrange="-1 1" ctrllimited="true"/>
 		<default class="body">
-			<geom type="capsule" condim="1" friction="5.50 5.50 5.50" solimp=".9 .99 .003" solref=".015 1" density="1"/>
+			<geom type="capsule" condim="1" friction="0.7" solimp=".9 .99 .003" solref=".015 1" density="100"/>
 			<joint type="hinge" damping="0.00" stiffness="1" armature="0.01" limited="true" solimplimit="0 .99 .01"/>
 		</default>
 	</default>
